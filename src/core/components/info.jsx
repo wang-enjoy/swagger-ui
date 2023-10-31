@@ -46,6 +46,7 @@ export class InfoUrl extends React.PureComponent {
 class Info extends React.Component {
   static propTypes = {
     title: PropTypes.any,
+    testName: PropTypes.any,
     description: PropTypes.any,
     version: PropTypes.any,
     info: PropTypes.object,
@@ -72,6 +73,7 @@ class Info extends React.Component {
     const version = info.get("version")
     const description = info.get("description")
     const title = info.get("title")
+    const testName = info.get("testName")
     const termsOfServiceUrl = safeBuildUrl(
       info.get("termsOfService"),
       specUrl,
@@ -100,6 +102,7 @@ class Info extends React.Component {
         <hgroup className="main">
           <h2 className="title">
             {title}
+            {testName}
             <span>
               {version && <VersionStamp version={version} />}
               <OpenAPIVersion oasVersion="2.0" />

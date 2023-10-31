@@ -3,8 +3,10 @@ window.onload = function() {
   window["SwaggerUIBundle"] = window["swagger-ui-bundle"]
   window["SwaggerUIStandalonePreset"] = window["swagger-ui-standalone-preset"]
   // Build a system
+  var params = new URLSearchParams(window.location.search);
+  var jsonUrl = params.get("jsonUrl")
   const ui = SwaggerUIBundle({
-    url: "https://petstore.swagger.io/v2/swagger.json",
+    url: jsonUrl,
     dom_id: "#swagger-ui",
     presets: [
       SwaggerUIBundle.presets.apis,
